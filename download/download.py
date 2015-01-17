@@ -14,3 +14,12 @@ best = video.getbest(preftype="mp4")
 filename = best.download(filepath="../download")
 command = 'mv ' + title + ' ./videos/video.mp4'
 subprocess.call(command, shell=True)
+
+bestaudio = video.getbestaudio(preftype="ogg")
+audiofile = bestaudio.download(filepath="../download")
+title=title[:-4]
+title+= '.ogg'
+command = 'mv ' + title + ' ./audio/audio.ogg'
+subprocess.call(command, shell=True)
+
+
