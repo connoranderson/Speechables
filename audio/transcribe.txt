@@ -1,0 +1,4 @@
+# to run sphinx to transcribe
+# note that you may need "> out.txt" to capture output
+# also note you may need to resample at 16hz (?)
+pocketsphinx_continuous -infile audio.wav
