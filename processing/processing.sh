@@ -1,13 +1,11 @@
-#!/bin/bash
-
 cp -r ../download/videos/ ./videos/
-rm -r ../download/videos/
-#uncomment to remove video from download folder
+rm -r ../download/videos/*
 
 FILENAME='video.mp4'
 cd videos
 
 ffmpeg -i $FILENAME -ss 00:01:30 -t 00:02:00 -c copy ./processed/output1.mp4 
+rm $FILENAME
 
 #ffmpeg -i video.mp4 -vcodec copy -acodec copy -ss 00:04:41 -t 00:04:44 editedfile.mp4
 
