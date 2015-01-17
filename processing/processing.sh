@@ -15,18 +15,18 @@ cd ..
 
 cd processing/videos
 
-while read line
-do
-    lineText=$line
-    stringarray($lineText)
-    NAME = stringarray[0] + '.mp4'
-    echo $NAME
-    TIMESTAMP = stringarray[1]
-    ffmpeg -i $FILENAME -ss 00:00:05 -t 00:00:05 -c copy ./processed/$NAME    
-done < $1
+# while read line
+# do
+#     lineText=$line
+#     stringarray($lineText)
+#     NAME = stringarray[0] + '.mp4'
+#     echo $NAME
+#     TIMESTAMP = stringarray[1]
+#     ffmpeg -i $FILENAME -ss 00:00:05 -t 00:00:05 -c copy ./processed/$NAME    
+# done < $1
 
-# ffmpeg -i $FILENAME -ss 00:00:05 -t 00:00:05 -c copy ./processed/output1.mp4 
-# rm $FILENAME
+ffmpeg -i $FILENAME -ss 00:00:05 -t 00:00:05 -c copy ./processed/output1.mp4 
+rm $FILENAME
 cd ..
 cd ..
 
