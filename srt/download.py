@@ -3,14 +3,42 @@
 import mechanize
 
 # Test Obama URL.
-obamaUrl = "https://www.youtube.com/watch?v=Tk5Sps0z27A"
+InputUrl = "https://www.youtube.com/watch?v=P79E0-3LeW8"
+
+url='http://keepsubs.com/?url='
+
+for c in InputUrl:
+	if c == ':': 
+		url+='%3A'
+	elif c == '/':
+		url+='%2F'
+	elif c == '?':
+		url+='%3F'
+	else:
+		url+=c
+
+print url
+
+
 
 br = mechanize.Browser()
-br.open("http://keepsubs.com/")
-for f in br.forms():
-    print f
+br.open(url)
 
-br.select_form(nr=0)
-br.form['DOWNLOAD'] = obamaUrl
-br.submit()
-br.response.read()
+i = 0
+for link in br.links():
+	if i == 3:
+		br.retrieve(link.url,'content.srt')[0]
+	i+=1
+
+
+
+
+# for form in br.forms():
+#     print form.name
+#     print form
+
+# br.select_form(nr=0)
+
+# br.submit()
+# br.response.read()
+
