@@ -1,4 +1,4 @@
-cp -r download/videos/ processing/videos/
+cp -r download/videos/video.mp4 processing/videos/video.mp4
 rm -r download/videos/*
 
 FILENAME='video.mp4'
