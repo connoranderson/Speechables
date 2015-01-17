@@ -4,5 +4,9 @@ cd download/
 echo 'Downloading video from specified url'
 python download.py
 cd ..
-echo 'Processing video'
+cd srt/
+echo 'Acquiring Subtitles'
+python downloadsrt.py
+cd ..
+echo 'Processing Video'
 ./processing/processing.sh

@@ -30,15 +30,3 @@ for link in br.links():
 		br.retrieve(link.url,'content.srt')[0]
 	i+=1
 
-
-
-
-# for form in br.forms():
-#     print form.name
-#     print form
-
-# br.select_form(nr=0)
-
-# br.submit()
-# br.response.read()
-
