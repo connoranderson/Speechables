@@ -1,7 +1,7 @@
 # Note this requires sox.
 
 # Parse SRT file. Only if need to with raw input.
-# python parse_srt.py > audio_parsed.srt
+python parse_srt.py > audio_parsed.srt
 
 # Convert into 16 htz, mono, little endian.
 sox audio.wav -r 16000 -c 1 -L audio_resampled.wav
