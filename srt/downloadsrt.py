@@ -3,7 +3,8 @@
 import mechanize
 
 # Test Obama URL.
-InputUrl = "https://www.youtube.com/watch?v=P79E0-3LeW8"
+file = open('url.py', 'r')
+InputUrl = file.read();
 
 url='http://keepsubs.com/?url='
 

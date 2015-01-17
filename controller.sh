@@ -1,5 +1,8 @@
 # Controls all subdirectory run files
 
+cp url.py download/
+cp url.py srt/
+
 cd download/
 echo 'Downloading video from specified url'
 python download.py

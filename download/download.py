@@ -2,7 +2,8 @@ import pafy
 import os.path
 import subprocess
 
-url = "https://www.youtube.com/watch?v=Nbol8oMNggs"
+file = open('url.py', 'r')
+url = file.read();
 video = pafy.new(url)
 name = video.title.split()
 title = ''
