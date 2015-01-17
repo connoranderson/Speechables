@@ -20,7 +20,7 @@ bestaudio = video.getbestaudio(preftype="ogg")
 audiofile = bestaudio.download(filepath="../download")
 title=title[:-4]
 title+= '.ogg'
-command = 'mv ' + title + ' ./audio/audio.ogg'
+command = 'mv ' + title + ' ../audio/audio.ogg'
 subprocess.call(command, shell=True)
 
 

@@ -1,4 +1,8 @@
-# Note this requires sox.
+# Note this requires sox to be installed.
+
+# You have to convert the ogg file into .wav.
+rm audio.wav
+avconv -i audio.ogg audio.wav
 
 # Parse SRT file. Only if need to with raw input.
 python parse_srt.py > audio_parsed.srt

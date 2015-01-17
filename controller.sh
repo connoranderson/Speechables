@@ -13,6 +13,7 @@ python downloadsrt.py
 cd ..
 mv srt/content.srt audio/audio.srt
 echo 'Converting audio into chunks'
-audio/resample.sh
+cd audio
+./resample.sh
 # echo 'Processing Video'
 # ./processing/processing.sh
