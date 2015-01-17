@@ -15,5 +15,7 @@ mv srt/content.srt audio/audio.srt
 echo 'Converting audio into chunks'
 cd audio
 ./resample.sh
+cd ..
+cp audio/final_output_parsed.txt processing/
 # echo 'Processing Video'
 # ./processing/processing.sh
