@@ -15,12 +15,19 @@ cd ..
 
 cd processing/videos
 
-ffmpeg -i $FILENAME -ss 00:01:30 -t 00:00:30 -c copy ./processed/output1.mp4 
+ffmpeg -i $FILENAME -ss 00:00:05 -t 00:00:05 -c copy ./processed/output1.mp4 
 rm $FILENAME
 cd ..
 cd ..
 
-
+# while read line
+# do
+#     lineText=$line
+#     stringarray($lineText)
+#     NAME = stringarray[0] + '.mp4'
+#     TIMESTAMP = stringarray[1]
+#     ffmpeg -i $FILENAME -ss 00:00:05 -t 00:00:05 -c copy ./processed/$NAME    
+# done < $1
 
 # uncomment for video splitting
 # <start> - the beginning of the part of a video ffmpeg is to cut out. Format: 00:00:00 - hours:minutes:seconds - hh:mm:ss- <duration> - the duration of the part of a video ffmpeg is to cut out. Format: 00:00:00 - hours:minutes:seconds - hh:mm:ss
