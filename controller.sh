@@ -11,5 +11,6 @@ cd srt/
 echo 'Acquiring Subtitles'
 python downloadsrt.py
 cd ..
+mv srt/content.srt audio/content.srt
 echo 'Processing Video'
 ./processing/processing.sh
