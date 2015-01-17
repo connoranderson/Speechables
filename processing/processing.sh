@@ -1,7 +1,7 @@
 #!/bin/bash
 
 cp -r ../download/videos/ ./videos/
-#rm -r ../download/videos/
+rm -r ../download/videos/
 #uncomment to remove video from download folder
 
 FILENAME='video.mp4'
