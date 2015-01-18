@@ -27,19 +27,17 @@ do
     ISLONGWORD=${stringarray[3]}
 
     # Continue if you see the file already
-    if [[ -f ./processed/full_$NAME ]]
+    if [[ -f ./processed/$NAME ]]
     then
         echo "Already saw $ABBR"
         continue
     fi
 
-    ## now test adding audio to small files
-
     # If statement.
     if [[ $ISLONGWORD -eq '1' ]] # test if long word (has vid)
     then
         echo "Video for $ABBR"
-        avconv -i video.mp4 -ss $TIMESTAMP1 -t $TIMESTAMP1 -c:a copy ./processed/full_$ABBR.mp4
+        avconv -i video.mp4 -ss $TIMESTAMP1 -t $TIMESTAMP1 -c:a copy ./processed/$ABBR.mp4
     else
         echo "Non-audio video for short $ABBR"
         # echo "Sorry no vid for $NAME"
@@ -50,14 +48,14 @@ do
         avconv -i $FILENAME -ss $TIMESTAMP1 -t $TIMESTAMP2 ./processed/$ABBR.wav
 
         # Create video of clip
-        avconv -i ./processed/$ABBR-%d.jpg ./processed/$NAME
+        avconv -i ./processed/$ABBR-%d.jpg ./processed/silent_$NAME
 
         # Add audio to video
-        avconv -i ./processed/$NAME -i ./processed/$ABBR.wav -shortest ./processed/full_$NAME
+        avconv -i ./processed/silent_$NAME -i ./processed/$ABBR.wav -shortest ./processed/$NAME
 
         rm ./processed/*.jpg
-        rm ./processed/$ABBR.mp4
         rm ./processed/$ABBR.wav
+        rm ./processed/silent*
 
     fi
 
