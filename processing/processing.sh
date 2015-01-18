@@ -4,7 +4,7 @@
 # rm -r download/audio/*
 
 pwd
-# rm ./videos/processed/*
+rm ./videos/processed/*
 
 cp -r ../download/videos/video.mp4 ./videos/video.mp4
 # rm -r download/videos/*
@@ -26,18 +26,19 @@ do
     # echo $TIMESTAMP2
     ISLONGWORD=${stringarray[3]}
 
-    # Continue if you see the file already
-    if [[ -f ./processed/$NAME ]]
-    then
-        echo "Already saw $ABBR"
-        continue
-    fi
+    # # Continue if you see the file already
+    # if [[ -f ./processed/$NAME ]]
+    # then
+    #     echo "Already saw $ABBR"
+    #     continue
+    # fi
 
     # If statement.
     if [[ $ISLONGWORD -eq '1' ]] # test if long word (has vid)
     then
         echo "Video for $ABBR"
-        avconv -i $FILENAME -ss $TIMESTAMP1 -t $TIMESTAMP2 -c copy ./processed/$NAME    
+        avconv -i video.mp4 -ss 00:00:01.00 -t 00:00:00.77 -c:a copy ./processed/$ABBR.mp4
+        # avconv -i $FILENAME -ss $TIMESTAMP1 -t $TIMESTAMP2 -c:v -c:a copy ./processed/$ABBR.mp4    
     else
         echo "Non-audio video for short $ABBR"
         # echo "Sorry no vid for $NAME"
